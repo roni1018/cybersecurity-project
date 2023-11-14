@@ -1,0 +1,22 @@
+#Password strength program
+import re
+def is_password_strong(password):      #have to make this a string? or a float?
+    if len(password) < 10:
+        #Checks the length of the password
+            return False
+    if not re.search(r'[a-z]', password):
+        return False
+        #Checks if the password contains at least on lower case letter
+    if not re.search(r'[A-Z]', password):
+        return False
+        #Checks if password contains at least one upper case letter\
+    if not re.search(r'[!@#$%^&*()_+{}\[/]:;<>,.?~'):
+        return False
+        #Checks if the password contains a character that is not a number or a letter
+password = input("Enter a password")
+#Gets the password to evaulate
+
+if is_password_strong(password):
+    print("Strong Password")
+else:
+    print("Weak password. Try another one.")
